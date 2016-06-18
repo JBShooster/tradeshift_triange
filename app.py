@@ -6,10 +6,10 @@ def triangle_input():
       if choice > 0:
         sides.append(choice)
       else:
-        print "Zero is not valid. Try again."
-    except (NameError, ValueError, SyntaxError):
+        print "Zero or negative numbers are invalid. Try again."
+    except (IndexError, TypeError, NameError, ValueError, SyntaxError):
       print "Must be an integer value greater than zero. Try again."
-  print "\nA:{}, B:{}, C:{}".format(sides[0],sides[1],sides[2])
+  print "\nSides [{}, {}, {}]".format(sides[0],sides[1],sides[2])
   # Checking if all sides are valid. Then if equilateral, isosceles, or scalene
   sides = sorted(sides)
   if sides[0] + sides[1] <= sides[2]: return "Not a valid triangle. Largest side bigger than or equal to two smaller sides."
